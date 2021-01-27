@@ -10,10 +10,5 @@ public class TerminatorQuoterTest {
     @Test
     public void testBeanCreation() throws InterruptedException {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
-
-        while (true) {
-            context.getBean(Quoter.class).sayQuote();
-            Thread.sleep(100);
-        }
     }
 }

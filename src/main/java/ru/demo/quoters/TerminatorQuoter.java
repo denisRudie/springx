@@ -24,8 +24,13 @@ public class TerminatorQuoter implements Quoter {
         this.message = message;
     }
 
+    /**
+     * Все методы с этой аннотацией будут запускать после того как все бины уже настроены
+     */
     @Override
+    @PostProxy
     public void sayQuote() {
+        System.out.println("Phase 3");
         for (int i = 0; i < repeat; i++) {
             System.out.println("message = " + message);
         }
