@@ -10,5 +10,6 @@ public class TerminatorQuoterTest {
     @Test
     public void testBeanCreation() throws InterruptedException {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
+        context.getBean(Quoter.class).sayQuote();
     }
 }

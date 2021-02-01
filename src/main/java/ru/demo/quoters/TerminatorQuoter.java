@@ -2,7 +2,13 @@ package ru.demo.quoters;
 
 import javax.annotation.PostConstruct;
 
+/**
+ * Аннотация @DeprecatedClass сообщает спрингу, что необходимо вместо бина этого класса, создать
+ * бин, указанный в аннотации. Реализуется с помощью BeanFactoryPostProcessor, который позволяет
+ * внести свои настройки в BeanFactory перед началом его работы.
+ */
 @Profiling
+@DeprecatedClass(newImpl = T1000.class)
 public class TerminatorQuoter implements Quoter {
 
     @InjectRandomInt(min = 2, max = 7)
